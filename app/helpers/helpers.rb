@@ -26,7 +26,6 @@ helpers do
     payments = @user.payments.where.not(status:'pending')
     receipts = @user.receipts.where.not(status:'pending')
     @user_transactions = payments + receipts
-    @user_transactions
     @user_transactions.sort!{|a,b| b.created_at <=> a.created_at}
     @user_pending_transactions = []
   end
